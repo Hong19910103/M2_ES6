@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrowfuncition</title>
+</head>
+<body>
+<script>
+    const inventory = [
+        {type: "machine", value: 5000},
+        {type: "machine", value: 650},
+        {type: "duck", value: 10},
+        {type: "furniture", value: 1200},
+        {type: "machine", value: 77}
+    ]
+    let machineType= inventory.filter((item)=>{// lau các type có tên machine
+        return item.type === "machine"
+    });
+    console.log(machineType)
+    let machineValue=machineType.map((item)=>{// lấy giá trị của các type machine
+        return item.value;
+    })
+    console.log(machineValue);
+
+    let totalMachineValue = machineValue.reduce((total,num)=> { // tính tổng giá trị các typemachine
+        return total+num;
+    },0) // o là giá trị khởi tạo ban đầu
+    console.log(totalMachineValue);
+
+
+</script>
+</body>
+</html>
